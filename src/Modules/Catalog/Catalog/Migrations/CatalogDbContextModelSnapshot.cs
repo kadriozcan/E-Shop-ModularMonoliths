@@ -4,20 +4,17 @@ using System.Collections.Generic;
 using Catalog.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Catalog.Data.Migrations
+namespace Catalog.Migrations
 {
     [DbContext(typeof(CatalogDbContext))]
-    [Migration("20250126120237_InitialCreate")]
-    partial class InitialCreate
+    partial class CatalogDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,7 +34,7 @@ namespace Catalog.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text[]");
 
-                    b.Property<DateTime>("CreatedAt")
+                    b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("CreatedBy")

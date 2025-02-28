@@ -4,10 +4,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Catalog.Data.Migrations
+namespace Catalog.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -26,7 +26,7 @@ namespace Catalog.Data.Migrations
                     Description = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false),
                     ImageFile = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     Price = table.Column<decimal>(type: "numeric", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     CreatedBy = table.Column<string>(type: "text", nullable: true),
                     LastModified = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     LastModifiedBy = table.Column<string>(type: "text", nullable: true)
